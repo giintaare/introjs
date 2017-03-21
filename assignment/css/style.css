@@ -1,0 +1,42 @@
+/* blink */
+#dog.enable {
+   animation:
+    flash 1s ease infinite;
+}
+@keyframes flash {
+  50% {
+    opacity:0;
+  }
+}
+
+
+/* move */
+#dog.go {
+   animation: walk 1s steps(1) infinite;
+}
+#wrap{
+            height: 275px;
+            animation: move_gb 6s linear infinite;
+        }
+        @keyframes walk {
+            to{
+                background-position: -960px;
+
+            }
+        }
+        @keyframes move_gb {
+            to{
+                background-position: 400px;
+                padding-left: 100%
+            }
+        }
+}
+/* moveto30 */
+/* movefrom30 */
+/* jump */
+/* jumping */
+/* fade */
+/* glow */
+/* fall down */
+/* shake */
+/* roll over */
