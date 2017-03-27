@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positioning</title>
+    <style>
+        .fade {
+            animation: fading 2s ease;
+        }
+
+        @keyframes fading {
+            70% {
+                opacity: 0;
+            }
+        }
+
+        #scene {
+            position: relative;
+            width: 900px;
+            height: 600px;
+            border: solid 1px;
+            background-color: burlywood;
+        }
+
+        div {
+            position: absolute;
+            background-size: cover;
+            bottom: 20px;
+        }
+
+        #cinderella {
+            background-image: url("images/cinderella.png");
+            right: 2000px;
+            width: 300px;
+            height: 310px;
+        }
+
+        #prince {
+            background-image: url("images/prince.png");
+            right: 3000px;
+            width: 150px;
+            height: 329px;
+        }
+
+        #clock1 {
+            background-image: url("images/clock1.png");
+            right: 200px;
+            width: 400px;
+            height: 400px;
+        }
+
+        #clock2 {
+            background-image: url("images/clock2.png");
+            right: 200px;
+            width: 400px;
+            height: 400px;
+        }
+
+        #house {
+            right: 10px;
+            width: 250px;
+            height: 250px;
+            background-image: url("images/house.gif");
+        }
+    </style>
+</head>
+
+<body>
+    <main id="scene">
+        <div id="cinderella"></div>
+        <div id="prince"></div>
+        <div id="clock1"></div>
+        <div id="clock2"></div>
+        <div id="wolf"></div>
+    </main>
+    <audio id=clocksound preload="auto">
+        <source src="Clock_Strikes_Twelve-Clock_Man-1976178740.mp3"> </audio>
+    <script>
+        function ready() {
+            let clocksound = document.querySelector("audio#clocksound");
+            clocksound.play();
+            clock2.classList.add("fade");
+        }
+        ready()
+    </script>
+</body>
+
+</html>
