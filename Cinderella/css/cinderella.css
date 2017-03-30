@@ -1,0 +1,62 @@
+#scene {
+    position: absolute;
+    border: none;
+    height: 600px;
+    width: 1200px;
+    background-color: bisque;
+}
+
+div {
+    position: relative;
+}
+
+#clock1 {
+    background-image: url("/images/clock1.png");
+    height: 1500px;
+    width: 1500px;
+    background-repeat: no-repeat;
+    top: 200px;
+    right: -500px;
+}
+
+#clock2 {
+    background-image: url("/images/clock2.png");
+    height: 1500px;
+    width: 1500px;
+    background-repeat: no-repeat;
+    top: 200px;
+    right: -500px;
+}
+
+#cinderella {
+    background-image: url("/images/cinderella.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+
+    left: 400px
+}
+
+#prince {
+    background-image: url("/images/prince.png");
+    right: 300px;
+}
+
+#cinderellashoe {
+    background-image: url("/images/shoe.png");
+    right: 300px;
+}
+
+#brownshoe {
+    background-image: url("/images/brownshoe.png");
+    right: 300px;
+}
+
+#resdhoe {
+    background-image: url("/images/redshoe.png");
+    right: 300px;
+}
+
+#smartshoe {
+    background-image: url("/images/smartshoe.png");
+    right: 300px;
+}

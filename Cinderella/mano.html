@@ -6,22 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>positioning</title>
     <style>
+
+        #shoe1, #shoe2, #shoe3, #shoe4{
+            cursor: pointer;
+
+        }
+
         .fade {
-            animation: fading 2s ease;
+            animation: fading 2s linear forwards;
         }
 
         @keyframes fading {
             70% {
+                opacity: 0.5;
+            }
+        }
+
+        .gone {
+            animation: fading 2s forwards;
+        }
+
+        @keyframes fading {
+            20% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
                 opacity: 0;
+            }
+        }
+
+        .cinderellarunsout {
+            animation: moving 8s linear forwards;
+        }
+
+        @keyframes moving {
+            30% {
+                transform: translate(100px);
+            }
+            50% {
+                transform: translate(300px);
+            }
+            100% {
+                transform: translate(1500px);
             }
         }
 
         #scene {
             position: relative;
-            width: 900px;
-            height: 600px;
+            width: 760px;
+            height: 475px;
             border: solid 1px;
-            background-color: burlywood;
+            background-image: url(images/super.jpg);
+            overflow: hidden;
+
         }
 
         div {
@@ -32,14 +72,14 @@
 
         #cinderella {
             background-image: url("images/cinderella.png");
-            right: 2000px;
+            right: 1000px;
             width: 300px;
             height: 310px;
         }
 
         #prince {
             background-image: url("images/prince.png");
-            right: 3000px;
+            right: 800px;
             width: 150px;
             height: 329px;
         }
@@ -47,43 +87,283 @@
         #clock1 {
             background-image: url("images/clock1.png");
             right: 200px;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
+            top: 80px;
         }
 
         #clock2 {
             background-image: url("images/clock2.png");
             right: 200px;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
+            top: 80px;
         }
 
-        #house {
-            right: 10px;
-            width: 250px;
-            height: 250px;
-            background-image: url("images/house.gif");
+        #shoe1 {
+            background-image: url(images/brownshoe.png);
+            width: 150px;
+            height: 70px;
+            left: 50px;
+            opacity: 0;
+
         }
+
+        #shoe2 {
+            background-image: url(images/redshoe.png);
+            width: 120px;
+            height: 80px;
+            left: 200px;
+            opacity: 0;
+        }
+
+        #shoe3 {
+            background-image: url(images/shoe.png);
+            width: 100px;
+            height: 85px;
+            left: 400px;
+            opacity: 0;
+
+        }
+
+        #shoe4 {
+            background-image: url(images/nike.png);
+            height: 120px;
+            width: 200px;
+           left: 530px;
+           opacity: 0;
+        }
+
+        #text{
+            background-image: url(images/Asset%201.png);
+            height: 200px;
+            width: 300px;
+            top: 10px;
+            right: 100px;
+            opacity: 0;
+        }
+
+        #text2{
+            background-image: url(images/Asset%202.png);
+            height: 150px;
+            width: 210px;
+            top: 80px;
+            left: 100px;
+            opacity: 0;
+
+        }
+
+        #winPic{
+            background-image: url(images/win.png);
+            position: absolute;
+            width: 760px;
+            height: 475px;
+            top: -100%;
+
+        }
+
+
+        .appear {
+         animation: appear 1s forwards;
+        }
+            @keyframes appear {
+
+            100%{
+                opacity: 1;
+            }
+        }
+
+        .princecomes {
+            animation: princemoving 7s linear forwards;
+        }
+
+        @keyframes princemoving {
+
+            50% {
+                transform: translate(700px);
+            }
+             75% {
+                transform: translate(400px);
+            }
+            100% {
+                transform: translate(500px);
+            }
+        }
+        .click{
+
+         opacity:0.5;
+        }
+
+        .textAppear{
+              animation: appears 1s forwards;
+        }
+            @keyframes appears {
+
+            100%{
+                opacity: 1;
+            }
+
+        }
+
+        .textAppear2{
+              animation: appears2 1s forwards;
+        }
+            @keyframes appears2 {
+
+            100%{
+                opacity: 1;
+            }
+
+        }
+        #losepic{
+             background-image: url(images/lose.png);
+            position: absolute;
+            width: 760px;
+            height: 475px;
+             top: -100vh;
+        }
+        .godown{
+            animation: godown 1s forwards;
+        }
+        @keyframes godown{
+            to{
+                top: 0;
+            }
+        }
+        .disappear{
+            display: none;
+        }
+
+
+
     </style>
 </head>
 
 <body>
+
     <main id="scene">
+        <div id="text"></div>
+        <div id="text2"></div>
         <div id="cinderella"></div>
         <div id="prince"></div>
-        <div id="clock1"></div>
         <div id="clock2"></div>
-        <div id="wolf"></div>
+        <div id="clock1"></div>
+        <div id="shoe1" class="selectshoe"></div>
+        <div id="shoe2" class="selectshoe"></div>
+        <div id="shoe3" class="cinderellashoe"></div>
+        <div id="shoe4" class="selectshoe"></div>
+        <div id="winPic"></div>
+        <div id="losepic"></div>
+        <audio id="losesound" preload="auto">
+            <source src="fail-trombone-02.mp3">
+        <audio id="winsound" preload="auto">
+            <source src="Ta%20Da-SoundBible.com-1884170640.mp3">
+        </audio>
     </main>
-    <audio id=clocksound preload="auto">
-        <source src="Clock_Strikes_Twelve-Clock_Man-1976178740.mp3"> </audio>
+
+    <audio id="clocksound" preload="auto">
+        <source src="shortclock.mp3"> </audio>
+    <audio id="music" preload="auto">
+        <source src="Cinderella%20-%2009.%20The%20Stoke%20Of%20Midnight.mp3"> </audio>
     <script>
-        function ready() {
+        let clock1 = document.querySelector("#clock1");
+        let clock2 = document.querySelector("#clock2");
+        let cinderella = document.querySelector("#cinderella");
+        let prince = document.querySelector("#prince");
+        let video = document.querySelector("video#dance");
+        let shoe1 = document.querySelector("#shoe1");
+        let shoe2 = document.querySelector("#shoe2");
+        let shoe3 = document.querySelector("#shoe3");
+        let shoe4 = document.querySelector("#shoe4");
+
+        function ready(){
             let clocksound = document.querySelector("audio#clocksound");
             clocksound.play();
-            clock2.classList.add("fade");
+            clock1.classList.add("fade");
+            clocksound.addEventListener('ended', clocksoundDone)
         }
-        ready()
+
+        function clocksoundDone() {
+            console.log("ended");
+            clocksound.removeEventListener('ended', clocksoundDone);
+            let music = document.querySelector("audio#music");
+            //why???
+            music.play();
+            clock2.classList.remove("fade");
+            clock1.classList.add("gone");
+            clock2.classList.add("gone");
+            clock2.addEventListener('animationend', cinderellaRuns);
+        }
+
+        function cinderellaRuns() {
+            console.log("cinderella runs");
+            cinderella.classList.add("cinderellarunsout");
+            cinderella.addEventListener('animationend', shoesAppear);
+        }
+
+        function shoesAppear() {
+            let shoe1 = document.querySelector("#shoe1");
+            console.log("shoes");
+            shoe1.classList.add("appear");
+            shoe2.classList.add("appear");
+            shoe3.classList.add("appear");
+            shoe4.classList.add("appear");
+            shoe1.addEventListener('animationend', princeComes);
+
+        }
+
+        function princeComes() {
+            console.log("Prince comes");
+            prince.classList.add("princecomes");
+            prince.addEventListener("animationend", choose);
+        }
+        function choose(){
+            console.log("choose a shoe");
+            text.classList.add("textAppear");
+            text.addEventListener("animationend", textagain);
+        }
+        function textagain(){
+            console.log("text2");
+            text2.classList.add("textAppear2");
+            //text2.addEventListener("animationend", chooseShoe);
+        }
+
+        let shoes=document.querySelectorAll(".selectshoe");
+        let losepic = document.querySelector("#losepic");
+        let losesound = document.querySelector("#losesound");
+        let winsound = document.querySelector("#winsound");
+        //HOW??????//////
+         /*function chooseShoe(){
+             console.log("blabla");
+        shoe1.addEventListener("click", loose);
+
+         }*/
+
+        shoes.forEach(shoeEListener);
+        function shoeEListener(shoe){
+            shoe.addEventListener('click', shoeClicked);
+        };
+
+        function shoeClicked(){
+            this.classList.remove('appear');
+            this.classList.add('disappear');
+            losepic.classList.add('godown');
+            losesound.play();
+        };
+
+        let winpic = document.querySelector('#winPic');
+
+        shoe3.addEventListener('click', youwin);
+        function youwin(){
+            winpic.classList.add('godown');
+            winsound.play();
+        };
+
+
+
+
+
+        ready();
     </script>
 </body>
 
